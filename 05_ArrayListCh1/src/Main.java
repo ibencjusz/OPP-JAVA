@@ -102,8 +102,10 @@ public class Main {
         String name = scanner.nextLine();
         System.out.println("Enter phone number: ");
         String phone = scanner.nextLine();
+        //tworzenie nowego kontaktu
         Contact newContact = Contact.createContact(name,phone);
 
+        //sprawdza czy kontakt istnieje, jesli nie to go dodaje do listy
         if(mobilePhone.addNewContact(newContact)){
             System.out.println("New contact added: " + name + ", phone = " + phone);
         } else {

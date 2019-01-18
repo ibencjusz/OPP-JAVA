@@ -18,6 +18,8 @@ public class Contact {
         return phoneNumber;
     }
 
+
+    //tworzy nowy obiekt - kontakt
     public static Contact createContact(String name, String phoneNumber){
         return new Contact(name,phoneNumber);
     }
