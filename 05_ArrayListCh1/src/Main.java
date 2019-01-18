@@ -1,12 +1,14 @@
 import java.util.Scanner;
 //test
 //test
+//test
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static MobilePhone mobilePhone = new MobilePhone("693 526 589");
 
     public static void main(String[] args)
     {
+        int test = 20;
         boolean quit = false;
         startPhone();
         printActions();
