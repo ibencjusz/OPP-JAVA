@@ -4,7 +4,7 @@
 import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static MobilePhone mobilePhone = new MobilePhone("693 526 589");
+    private static MobilePhone mobilePhone = new MobilePhone("693526589");
 
     public static void main(String[] args)
     {
@@ -45,6 +45,9 @@ public class Main {
                 case 6:
                     printActions();
                     break;
+
+                case 7:
+                    System.out.println("My number is: " + mobilePhone.getMyNumber());
             }
         }
     }
@@ -126,7 +129,8 @@ public class Main {
                            "3 - to update existing contact\n" +
                            "4 - to remove an existing contact\n" +
                            "5 - query if any existing contact exists\n" +
-                           "6 - to print a list of available actions\n");
+                           "6 - to print a list of available actions\n" +
+                           "7 - my numer is...\n");
         System.out.println("Choose your action: ");
     }
 }
