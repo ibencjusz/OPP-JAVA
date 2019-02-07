@@ -5,6 +5,7 @@ import org.jsoup.select.Elements;
 
 // https://www.tutorialspoint.com/jsoup/jsoup_use_selector.htm
 // https://www.youtube.com/watch?v=lZmuHyiKQdE&list=PL2k4Q1S5CYhHC0PIV5veJKMzLBO8I3ih3&index=1
+// https://blog.peku33.net/jsoup-mini-tutorial-parsowanie-html-w-srodowisku-java/
 
 
 import java.io.IOException;
