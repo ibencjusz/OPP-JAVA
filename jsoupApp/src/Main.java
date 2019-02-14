@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println(d.title());
 
-        
+
         //a with href
 
         /*
