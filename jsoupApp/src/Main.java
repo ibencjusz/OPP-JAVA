@@ -15,8 +15,27 @@ import static sun.util.logging.LoggingSupport.log;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello World!");
 
+        Document d = Jsoup.connect("https://autokomis-piotr.otomoto.pl/").timeout(6000).get();
+        Elements e = d.select("div.offer-item__content");
+
+        int counter=0;
+
+        for (Element element : e){
+            String name = element.select("a.offer-title__link").text();
+            System.out.println(name);
+            counter++;
+        }
+
+        System.out.println("Number of cars: " + counter);
+
+
+        System.out.println(d.title());
+
+        
+        //a with href
+
+        /*
 
         String html =
                 "<html><head><title>Sample Title</title></head>"
@@ -31,7 +50,6 @@ public class Main {
                 +"</body></html>";
         Document document = Jsoup.parse(html);
 
-        //a with href
         Elements links = document.select("a[href]");
 
         for (Element link : links) {
@@ -56,6 +74,8 @@ public class Main {
         for (Element link : sampleLinks) {
             System.out.println("Text: " + link.text());
         }
+
+        */
 
         /*
         Document doc;
