@@ -2,11 +2,20 @@ public class Car {
 
     private String name;
     private String shortDescription;
-    private double price;
+    private String price;
     private String year;
     private String distance;
     private String capacity;
     private String engine;
+    private String link;
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public String getName() {
         return name;
@@ -24,11 +33,11 @@ public class Car {
         this.shortDescription = shortDescription;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
