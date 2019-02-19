@@ -69,6 +69,7 @@ public class JsoupFunctions
                 temp++;
             }
 
+            /*
             //WYPISUJE NAZYW SAMOCHODU
             for (int i = 0; i < carsTab.length; i++) {
                 System.out.println(carsTab[i].getName());
@@ -80,6 +81,7 @@ public class JsoupFunctions
                 System.out.println((carsTab[i].getLink()));
                 System.out.println("=======================================================");
             }
+            */
 
             //WPISYWANIE DO LISTY
             for(int i=0; i < counter;i++){

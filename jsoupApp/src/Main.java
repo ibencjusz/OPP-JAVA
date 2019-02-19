@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        /*
+        
         String[] dealers = {"https://gocar.otomoto.pl/",
                             "https://deutchemark.otomoto.pl/",
                             "https://uzywane-z-niemiec.otomoto.pl/",
@@ -17,12 +17,20 @@ public class Main {
                             "https://kari.otomoto.pl/",
                             "https://autokaleta.otomoto.pl/",
                             "https://artur-auto.otomoto.pl/"};
-        */
 
-        String[] dealers = {"https://artur-auto.otomoto.pl/"};
+
+        //String[] dealers = {"https://artur-auto.otomoto.pl/"};
 
         JsoupFunctions jsoupFunctions = new JsoupFunctions();
-        jsoupFunctions.start(dealers);
+
+        try{
+            jsoupFunctions.start(dealers);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            System.out.println("Finish");
+        }
+
 
 
         /*
