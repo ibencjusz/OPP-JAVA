@@ -6,6 +6,8 @@ import org.apache.poi.ss.formula.functions.Column;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileOutputStream;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Excel
 {
@@ -13,12 +15,9 @@ public class Excel
     private static String[] columns = {"Marka", "Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji"};
 
 
-    public static void append(Car[] carsTab){
-
-    }
 
 
-    public static void createExcel(Car[] carsTab) throws Exception{
+    public static void createExcel(ArrayList<Car> arrayList) throws Exception{
         Workbook workbook = new HSSFWorkbook();
         CreationHelper creationHelper = workbook.getCreationHelper();
 
@@ -38,27 +37,6 @@ public class Excel
         Row headerRow = sheet.createRow(0);
         //Row contentRow = sheet.createRow(1);
 
-        /*
-        for(int i=1;i<columns.length;i++) {
-            Row row = sheet.createRow(i);
-            row.createCell(0).setCellValue(columns[i-1]);
-        }
-        */
-
-        /*
-        for (int i = 0; i < carsTab.length; i++) {
-            System.out.println(carsTab[i].getName());
-            //System.out.println(carsTab[i].getShortDescription());
-            System.out.println(carsTab[i].getPrice());
-            System.out.println(carsTab[i].getYear());
-            System.out.println(carsTab[i].getDistance());
-            System.out.println(carsTab[i].getCapacity());
-            System.out.println(carsTab[i].getEngine());
-            System.out.println((carsTab[i].getLink()));
-            System.out.println("=======================================================");
-        }
-        */
-
         for(int i=0; i<columns.length;i++){
             Cell cell = headerRow.createCell(i);
             cell.setCellValue(columns[i]);
@@ -66,7 +44,7 @@ public class Excel
         }
 
         //UZUPELNIA WIERSZE
-        for(int i=0; i<carsTab.length;i++){
+        for(int i=0; i<arrayList.size();i++){
             Row contentRow = sheet.createRow(i+1);
             Cell cell = contentRow.createCell(0);
             Cell cell1 = contentRow.createCell(1);
@@ -76,21 +54,19 @@ public class Excel
             Cell cell5 = contentRow.createCell(5);
             Cell cell6 = contentRow.createCell(6);
 
-            cell.setCellValue(carsTab[i].getName());
-            cell1.setCellValue(carsTab[i].getPrice());
-            cell2.setCellValue(carsTab[i].getYear());
-            cell3.setCellValue(carsTab[i].getDistance());
-            cell4.setCellValue(carsTab[i].getCapacity());
-            cell5.setCellValue(carsTab[i].getEngine());
-            cell6.setCellValue(carsTab[i].getLink());
+            cell.setCellValue(arrayList.get(i).getName());
+            cell1.setCellValue(arrayList.get(i).getPrice());
+            cell2.setCellValue(arrayList.get(i).getYear());
+            cell3.setCellValue(arrayList.get(i).getDistance());
+            cell4.setCellValue(arrayList.get(i).getCapacity());
+            cell5.setCellValue(arrayList.get(i).getEngine());
+            cell6.setCellValue(arrayList.get(i).getLink());
         }
-
 
         // Resize all columns to fit the content size
         for(int i = 0; i < columns.length; i++) {
             sheet.autoSizeColumn(i);
         }
-
 
         // Write the output to a file
         FileOutputStream fileOut = new FileOutputStream("poi-generated-file.xls");
@@ -100,6 +76,4 @@ public class Excel
         // Closing the workbook
         workbook.close();
     }
-
-
 }

@@ -1,7 +1,6 @@
 public class Car {
 
     private String name;
-    private String shortDescription;
     private String price;
     private String year;
     private String distance;
@@ -23,14 +22,6 @@ public class Car {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
-    }
-
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
     }
 
     public String getPrice() {

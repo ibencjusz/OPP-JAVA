@@ -5,33 +5,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 public class JsoupFunctions
 {
-    private String[][] tempTab = new String[23][7];
-    private int numberOfCars = 0;
-
-    public void writeIntoTable(Car[] car){
-
-
-        for(int i =0; i < 23; i++){
-            for(int j=0;j<7;j++){
-                if(j==0) tempTab[i][j] = car[i].getName();
-                if(j==1) tempTab[i][j] = car[i].getPrice();
-                if(j==2) tempTab[i][j] = car[i].getYear();
-                if(j==3) tempTab[i][j] = car[i].getDistance();
-                if(j==4) tempTab[i][j] = car[i].getCapacity();
-                if(j==5) tempTab[i][j] = car[i].getEngine();
-                if(j==6) tempTab[i][j] = car[i].getLink();
-            }
-        }
-    }
-
-    public void showTable(){
-        for(int i =0; i < 23; i++){
-            System.out.println(tempTab[i][0] + " " + tempTab[i][1]+" "+tempTab[i][2]+" "+ tempTab[i][3]+" "+tempTab[i][4]+" "+ tempTab[i][5]+" "+tempTab[i][6]);
-        }
-    }
-
+    private ArrayList<Car> arrayList = new ArrayList<>();
 
     public void start(String[] dealers) throws Exception{
 
@@ -50,8 +28,6 @@ public class JsoupFunctions
             for (int i = 0; i < carsTab.length; i++) {
                 carsTab[i] = new Car();
             }
-
-            numberOfCars += counter;
 
             //WPISUJE NAZWE SAMOCHODU
             int temp = 0;
@@ -91,15 +67,11 @@ public class JsoupFunctions
                 carsTab[temp].setEngine(engine);
 
                 temp++;
-                writeIntoTable(carsTab);
             }
-
-
 
             //WYPISUJE NAZYW SAMOCHODU
             for (int i = 0; i < carsTab.length; i++) {
                 System.out.println(carsTab[i].getName());
-                //System.out.println(carsTab[i].getShortDescription());
                 System.out.println(carsTab[i].getPrice());
                 System.out.println(carsTab[i].getYear());
                 System.out.println(carsTab[i].getDistance());
@@ -109,21 +81,14 @@ public class JsoupFunctions
                 System.out.println("=======================================================");
             }
 
-            Excel.createExcel(carsTab);
-
-
-            System.out.println("=======================================================");
-            System.out.println("=======================================================");
-            System.out.println("=======================================================");
-            System.out.println("Number of cars: " + counter);
-            System.out.println(d.title());
-            System.out.println("=======================================================");
-            System.out.println("=======================================================");
-            System.out.println("=======================================================");
-            System.out.println("ALL: "+ numberOfCars);
-            showTable();
-
+            //WPISYWANIE DO LISTY
+            for(int i=0; i < counter;i++){
+                arrayList.add(carsTab[i]);
+            }
         }
+
+        System.out.println(arrayList.size());
+        Excel.createExcel(arrayList);
     }
 
 }

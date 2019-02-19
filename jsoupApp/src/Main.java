@@ -1,41 +1,8 @@
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-// https://www.tutorialspoint.com/jsoup/jsoup_use_selector.htm
-// https://www.youtube.com/watch?v=lZmuHyiKQdE&list=PL2k4Q1S5CYhHC0PIV5veJKMzLBO8I3ih3&index=1
-// https://blog.peku33.net/jsoup-mini-tutorial-parsowanie-html-w-srodowisku-java/
-
-//SELEKTORY
-//https://www.w3schools.com/cssref/css_selectors.asp
-
-
-import java.io.IOException;
-
-import static sun.util.logging.LoggingSupport.log;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-
-        //https://renaultwarszawa.otomoto.pl/
-        //https://autokomis-piotr.otomoto.pl/
-        //https://top-cars.otomoto.pl/
-
-        //https://gocar.otomoto.pl/
-        //https://deutchemark.otomoto.pl/
-        //https://uzywane-z-niemiec.otomoto.pl/
-        //https://joker-cars.otomoto.pl/
-        //https://sevgalcars.otomoto.pl/
-        //https://autohousekomis.otomoto.pl/
-        //https://spdancar.otomoto.pl/
-        //https://autoparkwojcik.otomoto.pl/
-        //https://bmv.otomoto.pl/
-        //https://kari.otomoto.pl/
-        //https://autokaleta.otomoto.pl/
-
-
 
         /*
         String[] dealers = {"https://gocar.otomoto.pl/",
@@ -48,18 +15,15 @@ public class Main {
                             "https://autoparkwojcik.otomoto.pl/",
                             "https://bmv.otomoto.pl/",
                             "https://kari.otomoto.pl/",
-                            "https://autokaleta.otomoto.pl/"};
+                            "https://autokaleta.otomoto.pl/",
+                            "https://artur-auto.otomoto.pl/"};
         */
 
-        String[] dealers = {"https://deutchemark.otomoto.pl/"};
+        String[] dealers = {"https://artur-auto.otomoto.pl/"};
 
         JsoupFunctions jsoupFunctions = new JsoupFunctions();
         jsoupFunctions.start(dealers);
 
-
-
-
-        //a with href
 
         /*
 
