@@ -7,14 +7,42 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
+/*
+        String[] dealers = {"https://gocar.otomoto.pl/",
+                            "https://deutchemark.otomoto.pl/",
+                            "https://uzywane-z-niemiec.otomoto.pl/",
+                            "https://joker-cars.otomoto.pl/",
+                            "https://sevgalcars.otomoto.pl/",
+                            "https://autohousekomis.otomoto.pl/",
+                            "https://spdancar.otomoto.pl/",
+                            "https://autoparkwojcik.otomoto.pl/",
+                            "https://kari.otomoto.pl/",
+                            "https://artur-auto.otomoto.pl/"};
+        */
+
 public class JsoupFunctions
 {
     private ArrayList<Car> arrayList = new ArrayList<>();
+    private ArrayList<String> listOfCars = new ArrayList<>();
+    private int v = 0;
 
-    public void start(String[] dealers) throws Exception{
+    public void listOf(){
+        for(int i = 0; i < listOfCars.size(); i++){
+            System.out.println(listOfCars.get(i));
+        }
+    }
 
-        for (int j = 0; j < dealers.length; j++) {
-            Document d = Jsoup.connect(dealers[j]).timeout(6000).get();
+
+
+    public void start() throws Exception{
+
+        listOfCars.add("https://vw-plichta.otomoto.pl/");
+        //listOfCars.add("https://gocar.otomoto.pl/");
+
+
+
+        for (int j = 0; j < listOfCars.size(); j++) {
+            Document d = Jsoup.connect(listOfCars.get(j)).timeout(6000).get();
             Elements e = d.select("div.offer-item__content");
 
             int counter = 0;
@@ -75,19 +103,37 @@ public class JsoupFunctions
                 temp++;
             }
 
+            System.out.println(arrayList.size());
+
             /*
-            //WYPISUJE NAZYW SAMOCHODU
-            for (int i = 0; i < carsTab.length; i++) {
-                System.out.println(carsTab[i].getName());
-                System.out.println(carsTab[i].getPrice());
-                System.out.println(carsTab[i].getYear());
-                System.out.println(carsTab[i].getDistance());
-                System.out.println(carsTab[i].getCapacity());
-                System.out.println(carsTab[i].getEngine());
-                System.out.println((carsTab[i].getLink()));
-                System.out.println("=======================================================");
-            }
+            temp = 0;
+            for (Element element : e) {
+                temp++;
+                if(temp==25){
+                    //String name = element.select("span.page").text();
+                    //String name = element.getElementsByClass("next abs").attr("href");
+                    String name = element
+                    System.out.println("html: " + name);
+
+                    //Elements pngs = document.select("img[src$=.png]");
+                }
             */
+
+
+            //PRZECHWYTUJE LINK DO NASTEPNEJ STRONY
+            if(temp==25) {
+                v++;
+                System.out.println("TEMP: " + temp + " COUNTER: " + v);
+                Elements newPage = d.select("a[href*=page=]");
+                String naz = newPage.attr("href");
+                System.out.println(naz);
+                listOfCars.add(naz);
+                temp++;
+            }
+
+
+
+
 
             //WPISYWANIE DO LISTY
             for(int i=0; i < counter;i++){
