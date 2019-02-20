@@ -19,6 +19,8 @@ public class JsoupFunctions
 
             int counter = 0;
 
+            //System.out.println("TITLE: " + d.title());
+
             for (Element element : e) {
                 String name = element.select("a.offer-title__link").text();
                 counter++;
@@ -43,6 +45,7 @@ public class JsoupFunctions
             temp = 0;
             for (Element element : e) {
                 String name = element.select("span.offer-price__number").text();
+                name = name.substring(0,name.length()-4);
                 carsTab[temp].setPrice(name);
                 temp++;
             }
@@ -56,9 +59,12 @@ public class JsoupFunctions
                 int lastOfIndex = name.length();
 
                 year = name.substring(0, 5);
-                distance = name.substring(5, 15);
-                capacity = name.substring(16, 26);
-                engine = name.substring(26, lastOfIndex);
+                distance = name.substring(5,name.indexOf("km"));
+                capacity = name.substring(name.indexOf("km")+2, name.indexOf("cm3"));
+                engine = name.substring(name.indexOf("cm3")+3,lastOfIndex);
+
+                //System.out.println("KM: " + name.indexOf("km"));
+                //System.out.println("CM: " + name.indexOf("cm3"));
 
                 //2012 181 000 km 2 000 cm3 Diesel
                 carsTab[temp].setYear(year);
