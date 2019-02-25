@@ -20,11 +20,25 @@ public class Main {
                             "https://artur-auto.otomoto.pl/"};
         */
 
-        String[] dealers = {"https://vw-plichta.otomoto.pl/"};
-
 
         JsoupFunctions jsoupFunctions = new JsoupFunctions();
 
+
+        jsoupFunctions.addPage("https://kari.otomoto.pl/");
+        jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
+        jsoupFunctions.addPage("https://gocar.otomoto.pl/");
+        jsoupFunctions.addPage("https://deutchemark.otomoto.pl/");
+        jsoupFunctions.addPage("https://joker-cars.otomoto.pl/");
+        jsoupFunctions.addPage("https://deutchemark.otomoto.pl/");
+        jsoupFunctions.addPage("https://autoparkwojcik.otomoto.pl/");
+        jsoupFunctions.addPage("https://spdancar.otomoto.pl/");
+        jsoupFunctions.addPage("https://autohousekomis.otomoto.pl/");
+        jsoupFunctions.addPage("https://sevgalcars.otomoto.pl/");
+        jsoupFunctions.addPage("https://uzywane-z-niemiec.otomoto.pl/");
+
+
+        //jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
+        //jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
         try{
             jsoupFunctions.start();
             jsoupFunctions.listOf();
