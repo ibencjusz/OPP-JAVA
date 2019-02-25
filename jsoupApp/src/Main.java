@@ -35,13 +35,19 @@ public class Main {
         jsoupFunctions.addPage("https://autohousekomis.otomoto.pl/");
         jsoupFunctions.addPage("https://sevgalcars.otomoto.pl/");
         jsoupFunctions.addPage("https://uzywane-z-niemiec.otomoto.pl/");
+        jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
+        jsoupFunctions.addPage("https://drive-cars.otomoto.pl/");
+        jsoupFunctions.addPage("https://marix.otomoto.pl/");
+        jsoupFunctions.addPage("https://ac.otomoto.pl/");
+        jsoupFunctions.addPage("https://endy-car.otomoto.pl/");
 
 
-        //jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
-        //jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
+
+        //jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
+        //jsoupFunctions.addPage("https://auto-garaz.otomoto.pl/");
         try{
             jsoupFunctions.start();
-            jsoupFunctions.listOf();
+            //jsoupFunctions.listOf();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }finally {

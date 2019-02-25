@@ -1,12 +1,21 @@
 public class Car {
 
     private String name;
+    private String model;
     private String price;
     private String year;
     private String distance;
     private String capacity;
     private String engine;
     private String link;
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 
     public String getLink() {
         return link;

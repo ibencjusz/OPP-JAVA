@@ -50,7 +50,15 @@ public class JsoupFunctions
             for (Element element : e) {
                 String name = element.select("a.offer-title__link").text();
                 String link = element.select("a.offer-title__link").attr("href");
-                carsTab[temp].setName(name);
+
+                int index = name.length();
+                String car = name.substring(0,name.indexOf(" "));
+                String model = name.substring(name.indexOf(" ") + 1, index);
+
+                carsTab[temp].setName(car);
+                carsTab[temp].setModel(model);
+
+                //carsTab[temp].setName(name);
                 carsTab[temp].setLink(link);
                 temp++;
             }
@@ -109,20 +117,25 @@ public class JsoupFunctions
 
 
             //WARUNEK JESLI SAMOCHODOW W OFERCIE DEALERA BEDZIE ROWNO 25
-           if(counter==25){
-               try
-               {
-                   Elements newPage = d.select("a[href*=page=]");
-                   String naz = newPage.attr("href");
-                   //System.out.println(naz);
-                   addPage(naz);
-               }
-               catch (Exception ex)
-               {
-                   ex.getMessage();
-               }
+           Elements newPage1 = d.select("a[href*=page=]");
+           String naz1 = newPage1.attr("href");
 
+           if(naz1.length()!=0){
+               if(counter==25){
+                   try
+                   {
+                       Elements newPage = d.select("a[href*=page=]");
+                       String naz = newPage.attr("href");
+                       //System.out.println(naz);
+                       addPage(naz);
+                   }
+                   catch (Exception ex)
+                   {
+                       ex.getMessage();
+                   }
+               }
            }
+
 
             //WPISYWANIE DO LISTY
             for(int i=0; i < counter;i++){

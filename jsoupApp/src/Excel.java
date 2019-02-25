@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Excel
 {
 
-    private static String[] columns = {"Marka", "Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji"};
+    private static String[] columns = {"Marka", "Model" ,"Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji"};
 
 
 
@@ -47,14 +47,16 @@ public class Excel
         for(int i=0; i<arrayList.size();i++){
             Row contentRow = sheet.createRow(i+1);
             Cell cell = contentRow.createCell(0);
-            Cell cell1 = contentRow.createCell(1);
-            Cell cell2 = contentRow.createCell(2);
-            Cell cell3 = contentRow.createCell(3);
-            Cell cell4 = contentRow.createCell(4);
-            Cell cell5 = contentRow.createCell(5);
-            Cell cell6 = contentRow.createCell(6);
+            Cell cell0 = contentRow.createCell(1);
+            Cell cell1 = contentRow.createCell(2);
+            Cell cell2 = contentRow.createCell(3);
+            Cell cell3 = contentRow.createCell(4);
+            Cell cell4 = contentRow.createCell(5);
+            Cell cell5 = contentRow.createCell(6);
+            Cell cell6 = contentRow.createCell(7);
 
             cell.setCellValue(arrayList.get(i).getName());
+            cell0.setCellValue(arrayList.get(i).getModel());
             cell1.setCellValue(arrayList.get(i).getPrice());
             cell2.setCellValue(arrayList.get(i).getYear());
             cell3.setCellValue(arrayList.get(i).getDistance());
