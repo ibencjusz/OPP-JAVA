@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Excel
 {
 
-    private static String[] columns = {"Marka", "Model" ,"Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji"};
+    private static String[] columns = {"Marka", "Model" ,"Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji", "Dealer"};
 
 
 
@@ -54,6 +54,7 @@ public class Excel
             Cell cell4 = contentRow.createCell(5);
             Cell cell5 = contentRow.createCell(6);
             Cell cell6 = contentRow.createCell(7);
+            Cell cell7 = contentRow.createCell(8);
 
             cell.setCellValue(arrayList.get(i).getName());
             cell0.setCellValue(arrayList.get(i).getModel());
@@ -63,6 +64,7 @@ public class Excel
             cell4.setCellValue(arrayList.get(i).getCapacity());
             cell5.setCellValue(arrayList.get(i).getEngine());
             cell6.setCellValue(arrayList.get(i).getLink());
+            cell7.setCellValue(arrayList.get(i).getDealer());
         }
 
         // Resize all columns to fit the content size

@@ -47,9 +47,25 @@ public class JsoupFunctions
 
             //WPISUJE NAZWE SAMOCHODU
             int temp = 0;
+
+           // Element element = d.select("div.seller-badge")
+
+            Elements nameDealer = d.select("h2.seller-box__seller-name");
+            String dealerName = nameDealer.text();
+           /*
+            for(Element ele : nameDealer){
+                String name = ele.select("h2.seller-box__seller-name").text();
+
+            }
+            */
+
+           temp = 0;
             for (Element element : e) {
                 String name = element.select("a.offer-title__link").text();
                 String link = element.select("a.offer-title__link").attr("href");
+
+                //USTAWIA NAZWE DEALERA
+                carsTab[temp].setDealer(dealerName);
 
                 int index = name.length();
                 String car = name.substring(0,name.indexOf(" "));
@@ -71,6 +87,8 @@ public class JsoupFunctions
                 carsTab[temp].setPrice(name);
                 temp++;
             }
+
+
 
             //WSPISUJE ROK/DYSTANS/POJEMNOSC/RODZAJ PALIWA SAMOCHODU
             temp = 0;
@@ -120,14 +138,21 @@ public class JsoupFunctions
            Elements newPage1 = d.select("a[href*=page=]");
            String naz1 = newPage1.attr("href");
 
+
+           //JAK DEALER TO 25
+           //JAK ZWYKLE TO 32
            if(naz1.length()!=0){
-               if(counter==25){
+               if(counter==32){
                    try
                    {
+                       //DEALER
                        Elements newPage = d.select("a[href*=page=]");
                        String naz = newPage.attr("href");
-                       //System.out.println(naz);
+                       System.out.println(naz);
                        addPage(naz);
+
+                       //ZWYKLE
+
                    }
                    catch (Exception ex)
                    {

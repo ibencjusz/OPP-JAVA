@@ -24,6 +24,7 @@ public class Main {
         JsoupFunctions jsoupFunctions = new JsoupFunctions();
 
 
+        /*
         jsoupFunctions.addPage("https://kari.otomoto.pl/");
         jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
         jsoupFunctions.addPage("https://gocar.otomoto.pl/");
@@ -40,11 +41,13 @@ public class Main {
         jsoupFunctions.addPage("https://marix.otomoto.pl/");
         jsoupFunctions.addPage("https://ac.otomoto.pl/");
         jsoupFunctions.addPage("https://endy-car.otomoto.pl/");
+        */
 
 
-
-        //jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
+        jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
         //jsoupFunctions.addPage("https://auto-garaz.otomoto.pl/");
+
+        //jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/audi/a4/zawiercie/?search%5Bfilter_enum_fuel_type%5D%5B0%5D=petrol&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=");
         try{
             jsoupFunctions.start();
             //jsoupFunctions.listOf();

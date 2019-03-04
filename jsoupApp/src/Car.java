@@ -8,6 +8,7 @@ public class Car {
     private String capacity;
     private String engine;
     private String link;
+    private String dealer;
 
     public String getModel() {
         return model;
@@ -19,6 +20,14 @@ public class Car {
 
     public String getLink() {
         return link;
+    }
+
+    public String getDealer() {
+        return dealer;
+    }
+
+    public void setDealer(String dealer) {
+        this.dealer = dealer;
     }
 
     public void setLink(String link) {
