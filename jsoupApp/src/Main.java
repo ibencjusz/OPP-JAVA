@@ -1,5 +1,8 @@
 //https://www.w3schools.com/cssref/css_selectors.asp
 
+
+//https://www.w3schools.com/cssref/css_selectors.asp
+
 import java.util.ArrayList;
 
 public class Main {
@@ -42,16 +45,15 @@ public class Main {
         jsoupFunctions.addPage("https://endy-car.otomoto.pl/");
         */
 
-
-        jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
-        jsoupFunctions.addPage("https://endy-car.otomoto.pl/");
+        //String page = "https://www.otomoto.pl/osobowe/fiat/bravo/zawiercie/?search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=";
+        //jsoupFunctions.addPage("https://motomar.otomoto.pl/");
         jsoupFunctions.addPage("https://auto-garaz.otomoto.pl/");
-        //jsoupFunctions.addPage("https://mat-mar.otomoto.pl/");
+        //jsoupFunctions.addPage(page);
 
         //jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/audi/a4/zawiercie/?search%5Bfilter_enum_fuel_type%5D%5B0%5D=petrol&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=");
         try{
             jsoupFunctions.start();
-            //jsoupFunctions.listOf();
+            jsoupFunctions.listOf();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }finally {
