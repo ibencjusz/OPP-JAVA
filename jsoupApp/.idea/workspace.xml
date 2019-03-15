@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c011134c-d130-435f-b29e-1fc86a9b6b03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jsoupApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jsoupApp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poi-generated-file.xls" beforeDir="false" afterPath="$PROJECT_DIR$/poi-generated-file.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JsoupFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JsoupFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -57,22 +53,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9989" />
+          <entry key="java" value="9990" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9989" />
+          <entry key="JAVA" value="9990" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="1" />
           <entry key="java" value="10" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="JAVA" value="10" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -87,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="38" column="190" selection-start-line="38" selection-start-column="190" selection-end-line="38" selection-end-column="190" />
+            <state relative-caret-position="340">
+              <caret line="38" column="314" selection-start-line="38" selection-start-column="314" selection-end-line="38" selection-end-column="314" />
             </state>
           </provider>
         </entry>
@@ -96,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JsoupFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="-652">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2853#2854#0" expanded="true" />
@@ -277,7 +275,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4991708" visible="true" weight="0.30597016" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991708" visible="true" weight="0.30597016" />
       <window_info id="Structure" order="1" sideWeight="0.50082916" side_tool="true" weight="0.26865673" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -286,7 +284,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50082916" side_tool="true" weight="0.26865673" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21690768" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21690768" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -396,10 +394,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../jsoup-1.11.3.jar!/org/jsoup/Jsoup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="36" selection-start-line="35" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/JsoupFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="-652">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2853#2854#0" expanded="true" />
@@ -412,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="38" column="190" selection-start-line="38" selection-start-column="190" selection-end-line="38" selection-end-column="190" />
+        <state relative-caret-position="340">
+          <caret line="38" column="314" selection-start-line="38" selection-start-column="314" selection-end-line="38" selection-end-column="314" />
         </state>
       </provider>
     </entry>

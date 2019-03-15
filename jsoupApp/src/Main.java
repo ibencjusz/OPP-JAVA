@@ -36,7 +36,7 @@ public class Main {
 
         //LINK https://www.otomoto.pl/osobowe/?search%5Bnew_used%5D=on
 
-        jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/opel/astra/od-2005/zawiercie/?search[filter_float_year%3Ato]=2008&search[brand_program_id][0]=&search[dist]=50&search[country]=");
+        jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/opel/astra/od-2005/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bfilter_float_engine_capacity%3Afrom%5D=1500&search%5Bfilter_float_engine_capacity%3Ato%5D=2000&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=");
         /*
         try{
 
