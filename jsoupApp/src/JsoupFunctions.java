@@ -15,6 +15,7 @@ public class JsoupFunctions
     private ArrayList<String> listOfCars = new ArrayList<>();
     private int nextPageInt = 1;
     private int increment = 0;
+    private double sum = 0;
 
     //Lista wszystkich stron
     public void listOf(){
@@ -45,12 +46,21 @@ public class JsoupFunctions
             //USTAWIA NAZWE DEALERA do każdej oferty samochodu
             carsTab[temp].setDealer(dealerName);
 
+            //SPRAWDZIC CZY NAZWA SAMOCHODU MA JAKIS ROZMIAR I WPROWADZIC ZABEZPIECZENIE BO INACZEJ WYWALA
             int index = name.length();
-            String car = name.substring(0,name.indexOf(" "));
-            String model = name.substring(name.indexOf(" ") + 1, index);
+            int pom = name.indexOf(" ");
 
-            carsTab[temp].setName(car);
-            carsTab[temp].setModel(model);
+            if(pom == -1){
+                carsTab[temp].setName(name);
+                carsTab[temp].setModel("null");
+            }
+            else{
+                String car = name.substring(0,name.indexOf(" "));
+                String model = name.substring(name.indexOf(" ") + 1, index);
+
+                carsTab[temp].setName(car);
+                carsTab[temp].setModel(model);
+            }
 
             //carsTab[temp].setName(name);
             carsTab[temp].setLink(link);
@@ -64,6 +74,12 @@ public class JsoupFunctions
             String name = element.select("span.offer-price__number").text();
             name = name.substring(0,name.length()-4);
             carsTab[temp].setPrice(name);
+
+            //KONWERSJA CENY NA LICZBE
+            String pom1 = name.substring(0,name.indexOf(" ")) + name.substring(name.indexOf(" ")+1);
+
+            sum = sum + Double.valueOf(pom1);
+            //System.out.println(sum);
             temp++;
         }
     }
@@ -73,12 +89,17 @@ public class JsoupFunctions
         listOfCars.add(page);
     }
 
+    //SREDNIA CENA ZA SAMOCHOD
+    public double averagePrice(double sum, int increment){
+        return sum/increment;
+    }
+
 
     //Odpalenie aplikacji
     public void start() throws Exception{
 
         do {
-            Document d = Jsoup.connect(listOfCars.get(increment)).timeout(6000).get();
+            Document d = Jsoup.connect(listOfCars.get(increment)).timeout(100000).get();
             Elements e = d.select("div.offer-item__content");
 
             //LICZBA SAMOCHODOW NA STRONIE DELEARA
@@ -160,6 +181,8 @@ public class JsoupFunctions
             increment++;
         }while(increment<listOfCars.size());
 
+        System.out.println("SREDNIA: " + averagePrice(sum,arrayList.size()));
+        System.out.println("SUMA: " + sum);
         System.out.println(arrayList.size());
         Excel.createExcel(arrayList);
     }
