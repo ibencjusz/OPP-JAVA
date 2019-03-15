@@ -2,7 +2,7 @@ public class Car {
 
     private String name;
     private String model;
-    private String price;
+    private double price;
     private String year;
     private String distance;
     private String capacity;
@@ -42,11 +42,11 @@ public class Car {
         this.name = name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

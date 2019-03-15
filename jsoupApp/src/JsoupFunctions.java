@@ -5,6 +5,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 
@@ -73,10 +75,11 @@ public class JsoupFunctions
         for (Element element : e) {
             String name = element.select("span.offer-price__number").text();
             name = name.substring(0,name.length()-4);
-            carsTab[temp].setPrice(name);
+            String pom1 = name.substring(0,name.indexOf(" ")) + name.substring(name.indexOf(" ")+1);
+            carsTab[temp].setPrice(Double.valueOf(pom1));
 
             //KONWERSJA CENY NA LICZBE
-            String pom1 = name.substring(0,name.indexOf(" ")) + name.substring(name.indexOf(" ")+1);
+
 
             sum = sum + Double.valueOf(pom1);
             //System.out.println(sum);
@@ -181,7 +184,7 @@ public class JsoupFunctions
             increment++;
         }while(increment<listOfCars.size());
 
-        System.out.println("SREDNIA: " + averagePrice(sum,arrayList.size()));
+        System.out.println("SREDNIA: " + BigDecimal.valueOf(averagePrice(sum,arrayList.size())).setScale(2, RoundingMode.HALF_UP).doubleValue());
         System.out.println("SUMA: " + sum);
         System.out.println(arrayList.size());
         Excel.createExcel(arrayList);

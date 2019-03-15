@@ -36,7 +36,7 @@ public class Main {
 
         //LINK https://www.otomoto.pl/osobowe/?search%5Bnew_used%5D=on
 
-        jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/toyota/paseo/zawiercie/?search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=");
+        jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/opel/astra/od-2005/zawiercie/?search[filter_float_year%3Ato]=2008&search[brand_program_id][0]=&search[dist]=50&search[country]=");
         /*
         try{
 
