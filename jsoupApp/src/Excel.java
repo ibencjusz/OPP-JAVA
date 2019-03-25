@@ -12,7 +12,7 @@ public class Excel
 {
 
     private static String[] columns = {"Marka", "Model" ,"Cena", "Rok", "Dystans", "Pojemnosc", "Rodzaj", "Link do aukcji", "Dealer"};
-
+    public static String nameExcel;
 
 
 
@@ -72,7 +72,7 @@ public class Excel
         }
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream("poi-generated-file.xls");
+        FileOutputStream fileOut = new FileOutputStream(nameExcel+".xls");
         workbook.write(fileOut);
         fileOut.close();
 

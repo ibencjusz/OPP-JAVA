@@ -44,6 +44,7 @@ public class JsoupFunctions
             //NAZWA DELEARA SAMOCHODOWEGO
             Elements nameDealer = d.select("h2.seller-box__seller-name");
             String dealerName = nameDealer.text();
+            Excel.nameExcel = name;
 
             //USTAWIA NAZWE DEALERA do każdej oferty samochodu
             carsTab[temp].setDealer(dealerName);
@@ -184,8 +185,8 @@ public class JsoupFunctions
             increment++;
         }while(increment<listOfCars.size());
 
-        System.out.println("SREDNIA: " + BigDecimal.valueOf(averagePrice(sum,arrayList.size())).setScale(2, RoundingMode.HALF_UP).doubleValue());
-        System.out.println("SUMA: " + sum);
+        //System.out.println("SREDNIA: " + BigDecimal.valueOf(averagePrice(sum,arrayList.size())).setScale(2, RoundingMode.HALF_UP).doubleValue());
+        //System.out.println("SUMA: " + sum);
         System.out.println(arrayList.size());
         Excel.createExcel(arrayList);
     }

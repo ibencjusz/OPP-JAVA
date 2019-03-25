@@ -9,45 +9,24 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         JsoupFunctions jsoupFunctions = new JsoupFunctions();
-        /*
-        jsoupFunctions.addPage("https://kari.otomoto.pl/");
-        jsoupFunctions.addPage("https://artur-auto.otomoto.pl/");
-        jsoupFunctions.addPage("https://gocar.otomoto.pl/");
-        jsoupFunctions.addPage("https://deutchemark.otomoto.pl/");
-        jsoupFunctions.addPage("https://joker-cars.otomoto.pl/");
-        jsoupFunctions.addPage("https://deutchemark.otomoto.pl/");
-        jsoupFunctions.addPage("https://autoparkwojcik.otomoto.pl/");
-        jsoupFunctions.addPage("https://spdancar.otomoto.pl/");
-        jsoupFunctions.addPage("https://autohousekomis.otomoto.pl/");
-        jsoupFunctions.addPage("https://sevgalcars.otomoto.pl/");
-        jsoupFunctions.addPage("https://uzywane-z-niemiec.otomoto.pl/");
-        jsoupFunctions.addPage("https://autokaleta.otomoto.pl/");
-        jsoupFunctions.addPage("https://drive-cars.otomoto.pl/");
-        jsoupFunctions.addPage("https://marix.otomoto.pl/");
-        jsoupFunctions.addPage("https://ac.otomoto.pl/");
-        jsoupFunctions.addPage("https://endy-car.otomoto.pl/");
-        //https://1964.otomoto.pl/
-        */
 
-        //String page = "https://www.otomoto.pl/osobowe/fiat/bravo/zawiercie/?search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=";
-        //jsoupFunctions.addPage("https://motomar.otomoto.pl/");
-        //jsoupFunctions.addPage("https://auto-garaz.otomoto.pl/");
-        //jsoupFunctions.addPage(page);
-
+        String tucson = "https://www.otomoto.pl/osobowe/hyundai/tucson/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String verso = "https://www.otomoto.pl/osobowe/toyota/corolla-verso/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String bravo = "https://www.otomoto.pl/osobowe/fiat/bravo/od-2008/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2010&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String cc207 = "https://www.otomoto.pl/osobowe/peugeot/307-cc/od-2006/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2010&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String tigra = "https://www.otomoto.pl/osobowe/opel/tigra/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String bmw ="https://www.otomoto.pl/osobowe/bmw/seria-1/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2007&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String croma = "https://www.otomoto.pl/osobowe/fiat/croma/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2007&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String calibra = "https://www.otomoto.pl/osobowe/opel/calibra/?search%5Bbrand_program_id%5D%5B0%5D=&search%5Bcountry%5D=0";
+        String p407 = "https://www.otomoto.pl/osobowe/peugeot/407/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String astra = "https://www.otomoto.pl/osobowe/opel/astra/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+        String signum = "https://www.otomoto.pl/osobowe/opel/signum/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
         //LINK https://www.otomoto.pl/osobowe/?search%5Bnew_used%5D=on
 
-        jsoupFunctions.addPage("https://www.otomoto.pl/osobowe/opel/astra/od-2005/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bfilter_float_engine_capacity%3Afrom%5D=1500&search%5Bfilter_float_engine_capacity%3Ato%5D=2000&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=50&search%5Bcountry%5D=");
-        /*
-        try{
+        String focusCzewa = "https://www.otomoto.pl/osobowe/ford/focus/od-1999/czestochowa/?search%5Bfilter_float_year%3Ato%5D=2004&search%5Bfilter_enum_fuel_type%5D%5B0%5D=diesel&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=100&search%5Bcountry%5D=";
 
-            jsoupFunctions.listOf();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            jsoupFunctions.listOf();
-        }finally {
-            System.out.println("Finish");
-        }
-        */
+        jsoupFunctions.addPage(focusCzewa);
+
         jsoupFunctions.start();
     }
 }
