@@ -188,6 +188,9 @@ public class JsoupFunctions
         //System.out.println("SREDNIA: " + BigDecimal.valueOf(averagePrice(sum,arrayList.size())).setScale(2, RoundingMode.HALF_UP).doubleValue());
         //System.out.println("SUMA: " + sum);
         System.out.println(arrayList.size());
-        Excel.createExcel(arrayList);
+        //Excel.createExcel(arrayList);
+        Excel.appendExcel(arrayList, "C:/Users/NAZWAKOMPUTERA/Desktop/Opel Signum.xls");
+
+
     }
 }
