@@ -25,8 +25,7 @@ public class Main {
 
         String focusCzewa = "https://www.otomoto.pl/osobowe/ford/focus/od-1999/czestochowa/?search%5Bfilter_float_year%3Ato%5D=2004&search%5Bfilter_enum_fuel_type%5D%5B0%5D=diesel&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=100&search%5Bcountry%5D=";
 
-        jsoupFunctions.addPage(astra);
-
+        //jsoupFunctions.addPage(astra);
         jsoupFunctions.start();
     }
 }

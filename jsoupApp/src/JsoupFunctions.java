@@ -13,6 +13,29 @@ import java.util.ArrayList;
 
 public class JsoupFunctions
 {
+
+    public String tucson = "https://www.otomoto.pl/osobowe/hyundai/tucson/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String verso = "https://www.otomoto.pl/osobowe/toyota/corolla-verso/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String bravo = "https://www.otomoto.pl/osobowe/fiat/bravo/od-2008/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2010&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String cc207 = "https://www.otomoto.pl/osobowe/peugeot/307-cc/od-2006/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2010&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String tigra = "https://www.otomoto.pl/osobowe/opel/tigra/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2006&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String bmw ="https://www.otomoto.pl/osobowe/bmw/seria-1/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2007&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String croma = "https://www.otomoto.pl/osobowe/fiat/croma/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2007&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String calibra = "https://www.otomoto.pl/osobowe/opel/calibra/?search%5Bbrand_program_id%5D%5B0%5D=&search%5Bcountry%5D=0";
+    public String p407 = "https://www.otomoto.pl/osobowe/peugeot/407/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String astra = "https://www.otomoto.pl/osobowe/opel/astra/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    public String signum = "https://www.otomoto.pl/osobowe/opel/signum/od-2004/zawiercie/?search%5Bfilter_float_year%3Ato%5D=2009&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bdist%5D=75&search%5Bcountry%5D=";
+    //LINK https://www.otomoto.pl/osobowe/?search%5Bnew_used%5D=on
+
+    public String[] tabCars;
+
+    {
+        tabCars = new String[]{astra, bravo, cc207, tigra, bmw, croma, calibra, p407,verso , signum};
+    }
+
+
+    private int counterTAB = 0;
+
     private ArrayList<Car> arrayList = new ArrayList<>();
     private ArrayList<String> listOfCars = new ArrayList<>();
     private int nextPageInt = 1;
@@ -90,6 +113,8 @@ public class JsoupFunctions
 
     //DODAWANIA STRONY
     public void addPage(String page){
+        //int size = listOfCars.size();
+        //listOfCars.add(size+1,page);
         listOfCars.add(page);
     }
 
@@ -102,9 +127,12 @@ public class JsoupFunctions
     //Odpalenie aplikacji
     public void start() throws Exception{
 
+        listOfCars.add(tucson);
         do {
             Document d = Jsoup.connect(listOfCars.get(increment)).timeout(100000).get();
             Elements e = d.select("div.offer-item__content");
+
+
 
             //LICZBA SAMOCHODOW NA STRONIE DELEARA
             int temp = numberCars(e);
@@ -171,9 +199,16 @@ public class JsoupFunctions
                     catch (Exception ex)
                     {
                         ex.getMessage();
+                        //ADD NEW CAR TO CHECK
                     }
                 }
-                else nextPageInt = 1;
+                else {
+                    nextPageInt = 1;
+                    if(counterTAB<=tabCars.length){
+                        addPage(tabCars[counterTAB]);
+                    }
+                    counterTAB++;
+                }
             }
 
 
@@ -189,8 +224,6 @@ public class JsoupFunctions
         //System.out.println("SUMA: " + sum);
         System.out.println(arrayList.size());
         //Excel.createExcel(arrayList);
-        Excel.appendExcel(arrayList, "C:/Users/NAZWAKOMPUTERA/Desktop/Opel Signum.xls");
-
-
+        Excel.appendExcel(arrayList, "C:/Users/A0671137/Desktop/tesAA.xls");
     }
 }

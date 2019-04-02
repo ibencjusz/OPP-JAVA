@@ -18,7 +18,6 @@ public class Excel
     public static String nameExcel;
 
     public static void appendExcel(ArrayList<Car> arrayList, String path) throws Exception {
-
         try
         {
             FileInputStream inputStream = new FileInputStream(new File(path));
@@ -118,7 +117,7 @@ public class Excel
         }
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream(nameExcel+".xls");
+        FileOutputStream fileOut = new FileOutputStream("testaAA"+".xls");
         workbook.write(fileOut);
         fileOut.close();
 
