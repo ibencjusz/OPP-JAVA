@@ -117,7 +117,7 @@ public class Excel
         }
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream("testaAA"+".xls");
+        FileOutputStream fileOut = new FileOutputStream("testaAAC"+".xls");
         workbook.write(fileOut);
         fileOut.close();
 

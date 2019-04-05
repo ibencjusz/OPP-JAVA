@@ -30,10 +30,10 @@ public class JsoupFunctions
     public String[] tabCars;
 
     {
-        tabCars = new String[]{astra, bravo, cc207, tigra, bmw, croma, calibra, p407,verso , signum};
+        tabCars = new String[]{astra, bravo,p407, cc207, tigra, bmw, croma, calibra, verso , signum};
     }
 
-
+    //, tigra, bmw, croma, calibra, verso , signum
     private int counterTAB = 0;
 
     private ArrayList<Car> arrayList = new ArrayList<>();
@@ -184,6 +184,8 @@ public class JsoupFunctions
 
             //JAK DEALER TO 25
             //JAK ZWYKLE TO 32
+
+            boolean check = false;
             if(naz1.length()!=0){
                 if(temp==32){
                     nextPageInt++;
@@ -199,17 +201,29 @@ public class JsoupFunctions
                     catch (Exception ex)
                     {
                         ex.getMessage();
-                        //ADD NEW CAR TO CHECK
                     }
                 }
                 else {
                     nextPageInt = 1;
-                    if(counterTAB<=tabCars.length){
+                    System.out.println("POKA: " + counterTAB);
+                    if(counterTAB<tabCars.length){
                         addPage(tabCars[counterTAB]);
+                        counterTAB++;
                     }
-                    counterTAB++;
                 }
             }
+
+            else{
+                nextPageInt = 1;
+                System.out.println("POKA: " + counterTAB);
+                if(counterTAB<tabCars.length){
+                    addPage(tabCars[counterTAB]);
+                    counterTAB++;
+                }
+                //else break;
+                //else counterTAB++;//if(check) counterTAB++;
+            }
+
 
 
             //WPISYWANIE DO LISTY
